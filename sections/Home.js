@@ -1,11 +1,15 @@
 import React from "react";
 import Navbar from "../components/Navbar";
+var Scroll = require("react-scroll");
+var Element = Scroll.Element;
 
 const Home = () => {
   return (
-    <div className="sections">
-      <Navbar />
-    </div>
+    <Element name="home">
+      <div className="sections">
+        <Navbar />
+      </div>
+    </Element>
   );
 };
 

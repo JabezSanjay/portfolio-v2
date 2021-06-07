@@ -1,10 +1,14 @@
 import React from "react";
+var Scroll = require("react-scroll");
+var Element = Scroll.Element;
 
 const Portfolio = () => {
   return (
-    <div className="sections">
-      <h1>Portfolio</h1>
-    </div>
+    <Element name="portfolio">
+      <div className="sections">
+        <h1>Portfolio</h1>
+      </div>
+    </Element>
   );
 };
 

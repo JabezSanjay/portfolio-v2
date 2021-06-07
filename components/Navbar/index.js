@@ -1,19 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import COLORS from "../../assets/colors";
+import Hamburger from "../Hamburger";
 
 const Navbar = () => {
+  const [menuOpened, setMenuOpened] = useState(false);
+
   return (
     <NavbarTag>
       <div className="header">
-        <h3>Jabez Sanjay</h3>
+        <h3>
+          Jabez <span>Sanjay</span>
+        </h3>
         <div className="header__menu-icon">
-          <input className="menu-icon__checkbox" type="checkbox" />
+          <input
+            className="menu-icon__checkbox"
+            type="checkbox"
+            onChange={() => setMenuOpened(!menuOpened)}
+            checked={menuOpened}
+          />
           <div>
             <span></span>
             <span></span>
           </div>
         </div>
       </div>
+      <Hamburger state={(value) => setMenuOpened(value)} opened={menuOpened} />
     </NavbarTag>
   );
 };
@@ -25,6 +37,14 @@ const NavbarTag = styled.div`
     display: flex;
     justify-content: space-between;
     padding: 1em 3em;
+    h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: ${COLORS.PRIMARY_COLOR};
+      span {
+        color: ${COLORS.PURPLE_COLOR};
+      }
+    }
     &__menu-icon {
       position: relative;
       width: 30px;
@@ -32,6 +52,7 @@ const NavbarTag = styled.div`
       cursor: pointer;
       transform: scale(1.5);
       margin-top: 1em;
+      z-index: 10;
       .menu-icon__checkbox {
         display: block;
         width: 100%;
@@ -58,7 +79,7 @@ const NavbarTag = styled.div`
         display: block;
         width: 100%;
         height: 2px;
-        background-color: var(--bar-bg, #000);
+        background-color: ${COLORS.PRIMARY_COLOR};
         border-radius: 1px;
         transition: all 0.2s cubic-bezier(0.1, 0.82, 0.76, 0.965);
 
@@ -82,7 +103,6 @@ const NavbarTag = styled.div`
           }
         }
       }
-
       &.active:hover span:first-of-type,
       &.active:hover span:last-of-type,
       &:hover .menu-icon__checkbox:checked + div span:first-of-type,

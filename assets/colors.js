@@ -1,0 +1,9 @@
+const COLORS = {
+  PRIMARY_BLACK: "#2f323c",
+  PRIMARY_COLOR: "#1B1B87",
+  SECONDARY_COLOR: "#ffffff",
+  TERTIARY_COLOR: "#FFBDBD",
+  PURPLE_COLOR: "#5A4FF8",
+};
+
+export default COLORS;
