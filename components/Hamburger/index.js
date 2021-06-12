@@ -163,11 +163,11 @@ const HamburgerTag = styled.div`
           auto;
         ul {
           text-align: center;
-          margin-top: 1.75em;
+          margin-top: 5em;
           li {
             color: ${COLORS.PRIMARY_COLOR};
             list-style-type: none;
-            margin: 0.87em 0.75em 0.87em 0;
+            margin: 0.6em 0.75em 0.6em 0;
             cursor: pointer;
             font-weight: 700;
             font-size: 2rem;
@@ -179,6 +179,7 @@ const HamburgerTag = styled.div`
       }
     }
   }
+  //Small devices
   @media (max-width: 370px) {
     .hamburger-menu {
       .menu-layer {
@@ -196,18 +197,25 @@ const HamburgerTag = styled.div`
       }
     }
   }
-  @media (min-height: 750px) and (max-height: 900px) {
+
+  //Big screen devices
+  @media (min-width: 981px) {
     .hamburger-menu {
       .menu-layer {
         .menu-layer__items {
+          justify-content: center;
+          background: url("/bg-header.png") no-repeat;
           ul {
-            margin-top: 6em;
+            li {
+              margin: 1.5em 0.75em 1.5em 0;
+              font-size: 2.5rem;
+            }
           }
         }
       }
     }
   }
-  @media (min-width: 490px) {
+  @media (min-width: 490px) and (max-width: 980px) {
     .hamburger-menu {
       .menu-layer {
         .menu-layer__items {
@@ -216,7 +224,7 @@ const HamburgerTag = styled.div`
           ul {
             li {
               margin: 1.5em 0.75em 1.5em 0;
-              font-size: 3rem;
+              font-size: 2.5rem;
             }
           }
         }

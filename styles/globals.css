@@ -17,8 +17,9 @@ a {
   box-sizing: border-box;
 }
 
-.sections {
+section {
   position: relative;
   overflow: hidden;
   min-height: 100vh;
+  padding: 3rem 0;
 }
