@@ -27,15 +27,7 @@ export const staggerRevealClose = (node1, node2) => {
 };
 
 // STAGGER THE LINKS TO APPEAR
-export const staggerText = (
-  node1,
-  node2,
-  node3,
-  node4,
-  node5,
-  node6,
-  node7
-) => {
+export const staggerText = (node1, node2, node3, node4, node5) => {
   gsap.from([node1, node2, node3, node4, node5], {
     duration: 1.2,
     y: 80,
@@ -49,8 +41,8 @@ export const staggerText = (
 };
 
 // Fade up for the additonal info on our menu
-export const fadeInUp = (node) => {
-  gsap.from(node, {
+export const fadeInUp = (node1, node2, node3) => {
+  gsap.from([node1, node2, node3], {
     y: 60,
     duration: 1,
     delay: 0.2,

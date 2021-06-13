@@ -4,11 +4,8 @@ import styled from "styled-components";
 import {
   staggerText,
   staggerReveal,
-  fadeInUp,
   handleHover,
   handleHoverExit,
-  handleCityReturn,
-  handleCity,
   staggerRevealClose,
 } from "../Animations";
 import COLORS from "../../assets/colors";
@@ -20,15 +17,11 @@ const Hamburger = ({ state, opened }) => {
   let menuLayer = useRef(null);
   let reveal1 = useRef(null);
   let reveal2 = useRef(null);
-  let cityBackground = useRef(null);
   let line1 = useRef(null);
   let line2 = useRef(null);
   let line3 = useRef(null);
   let line4 = useRef(null);
   let line5 = useRef(null);
-  let line6 = useRef(null);
-  let line7 = useRef(null);
-  let info = useRef(null);
 
   useEffect(() => {
     // If the menu is open and we click the menu button to close it.
@@ -204,7 +197,7 @@ const HamburgerTag = styled.div`
       .menu-layer {
         .menu-layer__items {
           justify-content: center;
-          background: url("/bg-header.png") no-repeat;
+          background: url("Images/bg-header.png") no-repeat;
           ul {
             li {
               margin: 1.5em 0.75em 1.5em 0;

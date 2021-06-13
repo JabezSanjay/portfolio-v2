@@ -38,7 +38,7 @@ const NavbarTag = styled.div`
     justify-content: space-between;
     padding: 1em 3em;
     h3 {
-      font-size: 1.2rem;
+      font-size: 1.3rem;
       font-weight: 700;
       color: ${COLORS.PRIMARY_COLOR};
       span {
