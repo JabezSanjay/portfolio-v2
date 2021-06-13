@@ -27,7 +27,7 @@ const About = () => {
                     I enjoy creating delightful, human centered digital
                     experiences.
                   </h2>
-                  <Button />
+                  <Button name="Contact Me" />
                   <h1>
                     <span>Think.</span>
                     Make.

@@ -20,7 +20,7 @@ const Home = () => {
                   I bridge the gap between <span>you</span> and your{" "}
                   <span>customer</span> using <span>code!</span>
                 </h1>
-                <Button />
+                <Button name="Portfolio" />
               </div>
 
               <div>
@@ -62,6 +62,7 @@ const HomeTag = styled.div`
       align-items: center;
       h1 {
         text-align: center;
+
         font-size: 1.9rem;
         color: ${COLORS.PRIMARY_BLACK};
         span {

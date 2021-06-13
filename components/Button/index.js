@@ -2,11 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import COLORS from "../../assets/colors";
 
-const Button = () => {
+const Button = ({ name }) => {
   return (
     <ButtonTag>
       <button className="skew-button">
-        <span>Portfolio</span>
+        <span>{name}</span>
       </button>
     </ButtonTag>
   );
