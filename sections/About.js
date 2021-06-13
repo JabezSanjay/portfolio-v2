@@ -22,16 +22,16 @@ const About = () => {
                   />
                 </div>
                 <div>
-                  <span></span>
+                  <div className="notation"></div>
                   <h2>
                     I enjoy creating delightful, human centered digital
                     experiences.
                   </h2>
                   <Button name="Contact Me" />
                   <h1>
-                    <span>Think.</span>
+                    <span>Think. </span>
                     Make.
-                    <span>Solve.</span>
+                    <span> Solve!</span>
                   </h1>
                 </div>
               </div>
@@ -66,11 +66,23 @@ const AboutTag = styled.div`
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      .notation {
+        &:before {
+          content: "╾What I do";
+          color: ${COLORS.PURPLE_COLOR};
+          font-size: 1rem;
+          font-weight: 800;
+          display: flex;
+          margin-top: 1.2em;
+          justify-content: center;
+          align-items: center;
+        }
+      }
 
       h2 {
         color: ${COLORS.PRIMARY_BLACK};
         text-align: center;
-        font-size: 1.8rem;
+        font-size: 1.6rem;
       }
       h1 {
         text-align: center;
@@ -80,7 +92,6 @@ const AboutTag = styled.div`
           font-weight: 800;
           -webkit-text-stroke: 1px ${COLORS.PRIMARY_COLOR};
           -webkit-text-fill-color: white;
-          display: block;
         }
       }
       button {
@@ -99,6 +110,9 @@ const AboutTag = styled.div`
         flex-direction: row;
         h1 {
           font-size: 3.8rem;
+        }
+        h2 {
+          font-size: 2.2rem;
         }
       }
       &__split > * {

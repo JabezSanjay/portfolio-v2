@@ -17,8 +17,9 @@ const Home = () => {
             <div className="homepage__split">
               <div>
                 <h1>
-                  I bridge the gap between <span>you</span> and your{" "}
-                  <span>customer</span> using <span>code!</span>
+                  I bridge the gap between
+                  <span> you</span> and your <span>customer</span> using{" "}
+                  <span>code!</span>
                 </h1>
                 <Button name="Portfolio" />
               </div>
@@ -62,7 +63,6 @@ const HomeTag = styled.div`
       align-items: center;
       h1 {
         text-align: center;
-
         font-size: 1.9rem;
         color: ${COLORS.PRIMARY_BLACK};
         span {
