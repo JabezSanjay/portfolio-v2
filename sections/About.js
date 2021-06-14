@@ -27,12 +27,12 @@ const About = () => {
                     I enjoy creating delightful, human centered digital
                     experiences.
                   </h2>
-                  <Button name="Contact Me" />
                   <h1>
                     <span>Think. </span>
                     Make.
                     <span> Solve!</span>
                   </h1>
+                  <Button name="Contact Me" />
                 </div>
               </div>
             </div>
@@ -49,7 +49,7 @@ const AboutTag = styled.div`
   .aboutpage {
     background-color: #ffffff;
     background-image: url("/Images/Page-Turner-mobile.svg");
-    /* background-attachment: fixed; */
+    background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: top left;
     display: flex;

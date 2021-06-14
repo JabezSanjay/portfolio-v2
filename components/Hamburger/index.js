@@ -156,7 +156,7 @@ const HamburgerTag = styled.div`
           auto;
         ul {
           text-align: center;
-          margin-top: 5em;
+          margin-top: 7em;
           li {
             color: ${COLORS.PRIMARY_COLOR};
             list-style-type: none;
@@ -173,7 +173,7 @@ const HamburgerTag = styled.div`
     }
   }
   //Small devices
-  @media (max-width: 370px) {
+  @media (max-width: 375px) {
     .hamburger-menu {
       .menu-layer {
         .menu-layer__items {
