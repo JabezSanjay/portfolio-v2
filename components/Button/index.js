@@ -2,12 +2,18 @@ import React from "react";
 import styled from "styled-components";
 import COLORS from "../../assets/colors";
 
-const Button = ({ name }) => {
+const Button = ({ name, dark }) => {
   return (
     <ButtonTag>
-      <button className="skew-button">
-        <span>{name}</span>
-      </button>
+      {dark ? (
+        <button className="skew-button" style={{ color: "#FFFFFF" }}>
+          <span>{name}</span>
+        </button>
+      ) : (
+        <button className="skew-button" style={{ color: "#5A4FF8" }}>
+          <span>{name}</span>
+        </button>
+      )}
     </ButtonTag>
   );
 };
