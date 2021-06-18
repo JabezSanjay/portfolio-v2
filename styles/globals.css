@@ -17,8 +17,15 @@ a {
   box-sizing: border-box;
 }
 
+.container {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100vh;
+}
+
 .sections {
   position: relative;
   overflow: hidden;
   min-height: 100vh;
+  scroll-snap-align: start;
 }

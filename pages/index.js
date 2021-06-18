@@ -8,14 +8,14 @@ import Services from "../sections/Services";
 
 const index = () => {
   return (
-    <>
+    <div className="container">
       <Home />
       <About />
       <Services />
       <Portfolio />
       <Testimonials />
       <Contact />
-    </>
+    </div>
   );
 };
 
