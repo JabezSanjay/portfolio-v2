@@ -4,7 +4,6 @@ var Element = Scroll.Element;
 import styled from "styled-components";
 import COLORS from "../assets/colors";
 import Button from "../components/Button";
-import Image from "next/image";
 
 const Services = () => {
   return (
