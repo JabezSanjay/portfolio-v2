@@ -80,7 +80,7 @@ const ContactTag = styled.div`
       h3 {
         color: ${COLORS.PRIMARY_BLACK};
         text-align: center;
-        font-size: 1.6rem;
+        font-size: 1.65rem;
       }
 
       .mailbg {
@@ -276,7 +276,7 @@ const ContactTag = styled.div`
       .sections {
         h3 {
           font-size: 1.3rem;
-          margin: 1em;
+          margin: 0.8em;
         }
         .mailbg {
           margin-top: 2em;
@@ -290,7 +290,7 @@ const ContactTag = styled.div`
       .sections {
         h3 {
           font-size: 1.15rem;
-          margin: 1em;
+          margin: 0.8em;
         }
         .mailbg {
           margin-top: 2em;
