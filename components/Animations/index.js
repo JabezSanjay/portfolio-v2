@@ -32,7 +32,7 @@ export const staggerText = (node1, node2, node3, node4, node5) => {
     duration: 1.2,
     y: 80,
     delay: 0.3,
-    ease: "power3.inOut",
+    ease: "power3.easeOut",
     opacity: 0,
     stagger: {
       amount: 0.6,
@@ -45,9 +45,13 @@ export const fadeInUp = (node1, node2, node3) => {
   gsap.from([node1, node2, node3], {
     y: 60,
     duration: 1,
-    delay: 0.2,
+    delay: 0.4,
     opacity: 0,
-    ease: "power3.inOut",
+    ease: "power3.easeOut",
+    skewX: 5,
+    stagger: {
+      amount: 0.5,
+    },
   });
 };
 

@@ -1,11 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 import COLORS from "../../assets/colors";
+import { fadeInUp } from "../Animations";
 import Hamburger from "../Hamburger";
 
 const Navbar = () => {
   const [menuOpened, setMenuOpened] = useState(false);
   const [disabled, setDisabled] = useState(false);
+  let reveal1 = useRef(null);
+  let reveal2 = useRef(null);
+  let reveal3 = useRef(null);
+
+  useEffect(() => {
+    fadeInUp(reveal1, reveal2, reveal3);
+  }, []);
 
   const disableMenu = () => {
     setDisabled(!disabled);
@@ -22,10 +30,10 @@ const Navbar = () => {
   return (
     <NavbarTag>
       <div className="header">
-        <h3>
-          Jabez <span>Sanjay</span>
+        <h3 ref={(el) => (reveal1 = el)}>
+          Jabez <span ref={(el) => (reveal2 = el)}>Sanjay</span>
         </h3>
-        <div className="header__menu-icon">
+        <div className="header__menu-icon" ref={(el) => (reveal3 = el)}>
           <input
             className="menu-icon__checkbox"
             type="checkbox"
