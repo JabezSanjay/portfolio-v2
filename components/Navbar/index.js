@@ -11,7 +11,7 @@ const Navbar = () => {
     setDisabled(!disabled);
     setTimeout(() => {
       setDisabled(false);
-    }, 1500);
+    }, 1200);
   };
 
   const HandleMenu = () => {
