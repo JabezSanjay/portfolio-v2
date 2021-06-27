@@ -5,6 +5,19 @@ import Hamburger from "../Hamburger";
 
 const Navbar = () => {
   const [menuOpened, setMenuOpened] = useState(false);
+  const [disabled, setDisabled] = useState(false);
+
+  const disableMenu = () => {
+    setDisabled(!disabled);
+    setTimeout(() => {
+      setDisabled(false);
+    }, 1500);
+  };
+
+  const HandleMenu = () => {
+    disableMenu();
+    setMenuOpened(!menuOpened);
+  };
 
   return (
     <NavbarTag>
@@ -16,7 +29,8 @@ const Navbar = () => {
           <input
             className="menu-icon__checkbox"
             type="checkbox"
-            onChange={() => setMenuOpened(!menuOpened)}
+            disabled={disabled}
+            onChange={HandleMenu}
             checked={menuOpened}
           />
           <div>
@@ -45,6 +59,7 @@ const NavbarTag = styled.div`
         color: ${COLORS.PURPLE_COLOR};
       }
     }
+
     &__menu-icon {
       position: relative;
       width: 30px;
