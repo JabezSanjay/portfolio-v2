@@ -1,5 +1,7 @@
 import gsap from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
+gsap.registerPlugin(ScrollTrigger);
 // OPEN MENU
 export const staggerReveal = (node1, node2) => {
   gsap.from([node1, node2], {
@@ -32,7 +34,7 @@ export const staggerText = (node1, node2, node3, node4, node5) => {
     duration: 1.2,
     y: 80,
     delay: 0.3,
-    ease: "power3.inOut",
+    ease: "power3.easeOut",
     opacity: 0,
     stagger: {
       amount: 0.6,
@@ -40,14 +42,69 @@ export const staggerText = (node1, node2, node3, node4, node5) => {
   });
 };
 
-// Fade up for the additonal info on our menu
 export const fadeInUp = (node1, node2, node3) => {
   gsap.from([node1, node2, node3], {
     y: 60,
     duration: 1,
-    delay: 0.2,
+    delay: 0.4,
     opacity: 0,
-    ease: "power3.inOut",
+    ease: "power3.easeOut",
+    skewX: 5,
+    stagger: {
+      amount: 0.5,
+    },
+  });
+};
+
+export const homePageAnimation = (node1, node2, node3) => {
+  gsap.from([node1, node2, node3], {
+    y: 60,
+    duration: 1,
+    delay: 0.4,
+    opacity: 0,
+    ease: "power3.easeOut",
+    skewX: 3,
+    stagger: {
+      amount: 1.2,
+    },
+  });
+};
+
+export const aboutPageAnimation = (node1, node2, node3, node4, node5) => {
+  gsap.from([node1, node2, node3, node4, node5], {
+    y: 44,
+    duration: 1,
+    delay: 0.4,
+    opacity: 0,
+    ease: "power3.easeInOut",
+    skewX: 5,
+    stagger: {
+      amount: 1.2,
+    },
+    scrollTrigger: {
+      trigger: node2,
+      endTrigger: node5,
+      toggleActions: "play none none reverse",
+    },
+  });
+};
+
+export const servicesPageAnimation = (node1, node2, node3, node4) => {
+  gsap.from([node1, node2, node3, node4], {
+    y: 44,
+    duration: 1,
+    delay: 0.4,
+    opacity: 0,
+    ease: "power3.easeInOut",
+    skewX: 5,
+    stagger: {
+      amount: 1.2,
+    },
+    scrollTrigger: {
+      trigger: node1,
+      endTrigger: node4,
+      toggleActions: "play none none reverse",
+    },
   });
 };
 

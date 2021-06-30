@@ -271,6 +271,20 @@ const ContactTag = styled.div`
     }
   }
 
+  /* Iphone */
+  @media (min-height: 650px) and (max-height: 670px) {
+    .contactpage {
+      .sections {
+        h3 {
+          display: none;
+        }
+        .mailbg {
+          margin-top: 1.3em;
+        }
+      }
+    }
+  }
+
   @media (min-width: 375px) and (max-width: 400px) {
     .contactpage {
       .sections {

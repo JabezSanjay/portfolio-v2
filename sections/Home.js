@@ -1,39 +1,56 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
 var Scroll = require("react-scroll");
 var Element = Scroll.Element;
+import gsap from "gsap";
 import Image from "next/image";
 import COLORS from "../assets/colors";
 import Navbar from "../components/Navbar";
 import Button from "../components/Button";
+import { homePageAnimation } from "../components/Animations";
 
 const Home = () => {
+  let reveal1 = useRef(null);
+  let reveal2 = useRef(null);
+  let reveal3 = useRef(null);
+  let homepage = useRef(null);
+
+  useEffect(() => {
+    homePageAnimation(reveal1, reveal2, reveal3);
+    gsap.to(homepage, { duration: 0, css: { visibility: "visible" } });
+  }, []);
+
   return (
     <HomeTag>
       <Element name="home">
-        <Navbar />
-        <section className="homepage">
-          <div className="homepage__container">
-            <div className="homepage__split">
-              <div>
-                <h1>
-                  I bridge the gap between
-                  <span> you</span> and your <span>customer</span> using{" "}
-                  <span>code!</span>
-                </h1>
-                <Button name="Portfolio" />
-              </div>
+        <div className="main" ref={(el) => (homepage = el)}>
+          <Navbar />
 
-              <div>
-                <Image
-                  height={353}
-                  width={627}
-                  src="/Images/Homepage_Illustration.svg"
-                />
+          <section className="homepage">
+            <div className="homepage__container">
+              <div className="homepage__split">
+                <div>
+                  <h1 ref={(el) => (reveal1 = el)}>
+                    I bridge the gap between
+                    <span> you</span> and your <span>customer</span> using{" "}
+                    <span>code!</span>
+                  </h1>
+                  <div ref={(el) => (reveal2 = el)}>
+                    <Button name="Portfolio" />
+                  </div>
+                </div>
+
+                <div ref={(el) => (reveal3 = el)}>
+                  <Image
+                    height={353}
+                    width={627}
+                    src="/Images/Homepage_Illustration.svg"
+                  />
+                </div>
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </Element>
     </HomeTag>
   );
@@ -42,6 +59,9 @@ const Home = () => {
 export default Home;
 
 const HomeTag = styled.div`
+  .main {
+    visibility: hidden;
+  }
   .homepage {
     background-image: url("/Images/home-wave.svg");
     background-repeat: no-repeat;
