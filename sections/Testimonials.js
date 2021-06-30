@@ -21,7 +21,7 @@ const Testimonials = () => {
                   <Testimonial />
                 </div>
                 <div>
-                  <div className="notation"></div>
+                  {/* <div className="notation"></div> */}
                   <h2>
                     I enjoy creating delightful, human centered digital
                     experiences.
@@ -33,7 +33,7 @@ const Testimonials = () => {
                   <Testimonial />
                 </div>
                 <div className="changeable__2">
-                  <div className="notation"></div>
+                  {/* <div className="notation"></div> */}
                   <h2>
                     I enjoy creating delightful, human centered digital
                     experiences.
@@ -80,7 +80,7 @@ const TestimonialsTag = styled.div`
       justify-content: center;
       align-items: center;
 
-      .notation {
+      /* .notation {
         &:before {
           content: "✨";
           color: ${COLORS.PURPLE_COLOR};
@@ -91,7 +91,7 @@ const TestimonialsTag = styled.div`
           justify-content: center;
           align-items: center;
         }
-      }
+      } */
 
       h2 {
         color: ${COLORS.PRIMARY_BLACK};

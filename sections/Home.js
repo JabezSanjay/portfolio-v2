@@ -7,7 +7,7 @@ import Image from "next/image";
 import COLORS from "../assets/colors";
 import Navbar from "../components/Navbar";
 import Button from "../components/Button";
-import { fadeInUp } from "../components/Animations";
+import { homePageAnimation } from "../components/Animations";
 
 const Home = () => {
   let reveal1 = useRef(null);
@@ -16,7 +16,7 @@ const Home = () => {
   let homepage = useRef(null);
 
   useEffect(() => {
-    fadeInUp(reveal1, reveal2, reveal3);
+    homePageAnimation(reveal1, reveal2, reveal3);
     gsap.to(homepage, { duration: 0, css: { visibility: "visible" } });
   }, []);
 

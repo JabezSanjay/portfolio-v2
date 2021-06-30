@@ -1,12 +1,23 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 var Scroll = require("react-scroll");
 import Image from "next/image";
 import styled from "styled-components";
 import COLORS from "../assets/colors";
 import Button from "../components/Button";
+import { aboutPageAnimation } from "../components/Animations";
 var Element = Scroll.Element;
 
 const About = () => {
+  let reveal1 = useRef(null);
+  let reveal2 = useRef(null);
+  let reveal3 = useRef(null);
+  let reveal4 = useRef(null);
+  let reveal5 = useRef(null);
+
+  useEffect(() => {
+    aboutPageAnimation(reveal1, reveal2, reveal3, reveal4, reveal5);
+  }, []);
+
   return (
     <AboutTag>
       <Element name="about">
@@ -14,7 +25,7 @@ const About = () => {
           <section className="aboutpage">
             <div className="aboutpage__container">
               <div className="aboutpage__split">
-                <div>
+                <div ref={(el) => (reveal1 = el)}>
                   <Image
                     height={353}
                     width={627}
@@ -22,17 +33,19 @@ const About = () => {
                   />
                 </div>
                 <div>
-                  <div className="notation"></div>
-                  <h2>
+                  <div className="notation" ref={(el) => (reveal2 = el)}></div>
+                  <h2 ref={(el) => (reveal3 = el)}>
                     I enjoy creating delightful, human centered digital
                     experiences.
                   </h2>
-                  <h1>
+                  <h1 ref={(el) => (reveal4 = el)}>
                     <span>Think. </span>
                     Make.
                     <span> Solve!</span>
                   </h1>
-                  <Button name="Contact Me" />
+                  <div ref={(el) => (reveal5 = el)}>
+                    <Button name="Contact Me" />
+                  </div>
                 </div>
               </div>
             </div>
