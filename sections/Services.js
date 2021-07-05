@@ -3,7 +3,7 @@ var Scroll = require("react-scroll");
 var Element = Scroll.Element;
 import styled from "styled-components";
 import COLORS from "../assets/colors";
-import { servicesPageAnimation } from "../components/Animations";
+import { fadePageAnimation } from "../components/Animations";
 import Button from "../components/Button";
 
 const Services = () => {
@@ -13,7 +13,7 @@ const Services = () => {
   let reveal4 = useRef(null);
 
   useEffect(() => {
-    servicesPageAnimation(reveal1, reveal2, reveal3, reveal4);
+    fadePageAnimation(reveal1, reveal2, reveal3, reveal4);
   }, []);
 
   return (
