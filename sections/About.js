@@ -4,7 +4,7 @@ import Image from "next/image";
 import styled from "styled-components";
 import COLORS from "../assets/colors";
 import Button from "../components/Button";
-import { aboutPageAnimation } from "../components/Animations";
+import { fadePageAnimation } from "../components/Animations";
 var Element = Scroll.Element;
 
 const About = () => {
@@ -15,7 +15,7 @@ const About = () => {
   let reveal5 = useRef(null);
 
   useEffect(() => {
-    aboutPageAnimation(reveal1, reveal2, reveal3, reveal4, reveal5);
+    fadePageAnimation(reveal1, reveal2, reveal3, reveal4, reveal5);
   }, []);
 
   return (

@@ -1,21 +1,30 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 var Scroll = require("react-scroll");
 var Element = Scroll.Element;
 import styled from "styled-components";
 import COLORS from "../assets/colors";
+import { fadePageAnimation } from "../components/Animations";
 
 const Contact = () => {
+  let reveal1 = useRef(null);
+  let reveal2 = useRef(null);
+  let reveal3 = useRef(null);
+
+  useEffect(() => {
+    fadePageAnimation(reveal1, reveal2, reveal3);
+  }, []);
+
   return (
     <Element name="contact">
       <ContactTag>
         <section className="contactpage">
           <div className="sections">
-            <div className="notation"></div>
-            <h3>
+            <div className="notation" ref={(el) => (reveal1 = el)}></div>
+            <h3 ref={(el) => (reveal2 = el)}>
               I’d love to meet up with you to discuss your venture, and
               potential collaborations.
             </h3>
-            <div className="mailbg">
+            <div className="mailbg" ref={(el) => (reveal3 = el)}>
               <label className="l1" htmlFor="mailinput">
                 Your Email :
               </label>

@@ -56,9 +56,8 @@ export const fadeInUp = (node1, node2, node3) => {
   });
 };
 
-export const homePageAnimation = (node1, node2, node3) => {
-  gsap.from([node1, node2, node3], {
-    y: 60,
+export const fadePageAnimation = (node1, node2, node3, node4, node5) => {
+  let commonAnimation = {
     duration: 1,
     delay: 0.4,
     opacity: 0,
@@ -67,45 +66,38 @@ export const homePageAnimation = (node1, node2, node3) => {
     stagger: {
       amount: 1.2,
     },
-  });
-};
-
-export const aboutPageAnimation = (node1, node2, node3, node4, node5) => {
-  gsap.from([node1, node2, node3, node4, node5], {
-    y: 44,
-    duration: 1,
-    delay: 0.4,
-    opacity: 0,
-    ease: "power3.easeInOut",
-    skewX: 5,
-    stagger: {
-      amount: 1.2,
-    },
-    scrollTrigger: {
-      trigger: node2,
-      endTrigger: node5,
-      toggleActions: "play none none reverse",
-    },
-  });
-};
-
-export const servicesPageAnimation = (node1, node2, node3, node4) => {
-  gsap.from([node1, node2, node3, node4], {
-    y: 44,
-    duration: 1,
-    delay: 0.4,
-    opacity: 0,
-    ease: "power3.easeInOut",
-    skewX: 5,
-    stagger: {
-      amount: 1.2,
-    },
-    scrollTrigger: {
-      trigger: node1,
-      endTrigger: node4,
-      toggleActions: "play none none reverse",
-    },
-  });
+  };
+  if (!node4) {
+    gsap.from([node1, node2, node3], {
+      x: -60,
+      ...commonAnimation,
+      scrollTrigger: {
+        trigger: node1,
+        endTrigger: node3,
+        toggleActions: "play none none reverse",
+      },
+    });
+  } else if (!node5) {
+    gsap.from([node1, node2, node3, node4], {
+      y: 60,
+      ...commonAnimation,
+      scrollTrigger: {
+        trigger: node2,
+        endTrigger: node4,
+        toggleActions: "play none none reverse",
+      },
+    });
+  } else {
+    gsap.from([node1, node2, node3, node4, node5], {
+      y: -60,
+      ...commonAnimation,
+      scrollTrigger: {
+        trigger: node2,
+        endTrigger: node5,
+        toggleActions: "play none none reverse",
+      },
+    });
+  }
 };
 
 // Hover on the link

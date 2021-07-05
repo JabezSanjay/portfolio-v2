@@ -1,29 +1,43 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 var Scroll = require("react-scroll");
 import styled from "styled-components";
 import COLORS from "../assets/colors";
+import { fadePageAnimation } from "../components/Animations";
 import Button from "../components/Button";
 import Card from "../components/Card";
 var Element = Scroll.Element;
 
 const Portfolio = () => {
+  let reveal1 = useRef(null);
+  let reveal2 = useRef(null);
+  let reveal3 = useRef(null);
+  let reveal4 = useRef(null);
+
+  useEffect(() => {
+    fadePageAnimation(reveal1, reveal2, reveal3, reveal4);
+  }, []);
+
   return (
     <PortfolioTag>
       <Element name="portfolio">
         <div className="sections">
           <section className="portfoliopage">
             <div className="portfoliopage__container">
-              <h2 className="text-center">Look at My Products.</h2>
-              <Button name="Contact Me" />
+              <h2 className="text-center" ref={(el) => (reveal1 = el)}>
+                Look at My Products.
+              </h2>
+              <div ref={(el) => (reveal2 = el)}>
+                <Button name="Contact Me" />
+              </div>
               <div className="portfoliopage__split">
-                <div>
+                <div ref={(el) => (reveal3 = el)}>
                   <Card
                     name="Ecommerce WebApp"
                     description="MongoDB | Express | React | NodeJs"
                     url="https://tshirts-mern.herokuapp.com/"
                   />
                 </div>
-                <div>
+                <div ref={(el) => (reveal4 = el)}>
                   <Card
                     name="Ecommerce WebApp"
                     description="MongoDB | Express | React | NodeJs"

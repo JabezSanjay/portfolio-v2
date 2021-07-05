@@ -1,40 +1,48 @@
-import React from "react";
-import Image from "next/image";
-
+import React, { useEffect, useRef } from "react";
 import Testimonial from "../components/Testimonial";
 import styled from "styled-components";
 import COLORS from "../assets/colors";
-import Button from "../components/Button";
 var Scroll = require("react-scroll");
 var Element = Scroll.Element;
+import { fadePageAnimation } from "../components/Animations";
 
 const Testimonials = () => {
+  let reveal1 = useRef(null);
+  let reveal2 = useRef(null);
+  let reveal3 = useRef(null);
+  let reveal4 = useRef(null);
+  let reveal5 = useRef(null);
+
+  useEffect(() => {
+    fadePageAnimation(reveal1, reveal2, reveal3, reveal4, reveal5);
+  }, []);
+
   return (
     <TestimonialsTag>
       <Element name="testimonial">
         <div className="sections">
           <section className="testimonialpage">
             <div className="testimonialpage__container">
-              <h1>Testimonial</h1>
+              <h1 ref={(el) => (reveal1 = el)}>Testimonial</h1>
               <div className="testimonialpage__split">
-                <div>
+                <div ref={(el) => (reveal2 = el)}>
                   <Testimonial />
                 </div>
                 <div>
                   {/* <div className="notation"></div> */}
-                  <h2>
+                  <h2 ref={(el) => (reveal3 = el)}>
                     I enjoy creating delightful, human centered digital
                     experiences.
                   </h2>
                 </div>
               </div>
               <div className="testimonialpage__split">
-                <div className="changeable__1">
+                <div className="changeable__1" ref={(el) => (reveal4 = el)}>
                   <Testimonial />
                 </div>
                 <div className="changeable__2">
                   {/* <div className="notation"></div> */}
-                  <h2>
+                  <h2 ref={(el) => (reveal5 = el)}>
                     I enjoy creating delightful, human centered digital
                     experiences.
                   </h2>
@@ -96,7 +104,7 @@ const TestimonialsTag = styled.div`
       h2 {
         color: ${COLORS.PRIMARY_BLACK};
         text-align: center;
-        font-size: 1.6rem;
+        font-size: 1.3rem;
       }
       h1 {
         text-align: center;
@@ -131,7 +139,7 @@ const TestimonialsTag = styled.div`
           font-size: 3.8rem;
         }
         h2 {
-          font-size: 2.2rem;
+          font-size: 1.7rem;
         }
       }
       &__split > * {
