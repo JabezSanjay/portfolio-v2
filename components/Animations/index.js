@@ -69,7 +69,7 @@ export const fadePageAnimation = (node1, node2, node3, node4, node5) => {
   };
   if (!node4) {
     gsap.from([node1, node2, node3], {
-      x: -60,
+      y: 60,
       ...commonAnimation,
       scrollTrigger: {
         trigger: node1,
@@ -79,7 +79,7 @@ export const fadePageAnimation = (node1, node2, node3, node4, node5) => {
     });
   } else if (!node5) {
     gsap.from([node1, node2, node3, node4], {
-      y: 60,
+      y: -60,
       ...commonAnimation,
       scrollTrigger: {
         trigger: node2,
@@ -89,7 +89,7 @@ export const fadePageAnimation = (node1, node2, node3, node4, node5) => {
     });
   } else {
     gsap.from([node1, node2, node3, node4, node5], {
-      y: -60,
+      x: -60,
       ...commonAnimation,
       scrollTrigger: {
         trigger: node2,
