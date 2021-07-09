@@ -28,10 +28,18 @@ const Testimonials = () => {
               <div ref={(el) => (reveal3 = el)}>
                 {/* <div className="notation"></div> */}
                 <q>
-                  I enjoy creating delightful, human centered digital
-                  experiences.
+                  I worked with Jabez on multiple projects. I love his
+                  dedication towards the work, especially taking ownership of
+                  the project. His eagerness to learn new technology and
+                  parallel implementation is something amusing. I recommend him
+                  as an expert in React, Node, MERN/Fullstack Engineer!
                 </q>
-                <h4>- Jegan</h4>
+                <h4>- Jegan Selvaraj</h4>
+                <h5>
+                  Tech Serial-Entrepreneur | Angel Investor | Startup Advisor &
+                  Mentor | Ex CTO - Oasys Cybernetics | Ex CTO & Director - TVS
+                  NEXT | Ex CEO - Blisslogix
+                </h5>
               </div>
             </div>
             <div className="testimonialpage__split">
@@ -41,10 +49,14 @@ const Testimonials = () => {
               <div className="changeable__2" ref={(el) => (reveal5 = el)}>
                 {/* <div className="notation"></div> */}
                 <q>
-                  I enjoy creating delightful, human centered digital
-                  experiences.
+                  I worked with Jabez on multiple projects. I love his
+                  dedication towards the work, especially taking ownership of
+                  the project. His eagerness to learn new technology and
+                  parallel implementation is something amusing. I recommend him
+                  as an expert in React, Node, MERN/Fullstack Engineer!
                 </q>
-                <h4>- Jayesh</h4>
+                <h4>- Jayesh Bino Rajiv</h4>
+                <h5>Senior Software Developer - Wipro Technologies</h5>
               </div>
             </div>
           </div>
@@ -106,15 +118,21 @@ const TestimonialsTag = styled.div`
       q {
         color: ${COLORS.PRIMARY_BLACK};
         text-align: center;
-        font-size: 1.6rem;
+        font-size: 1.05rem;
         width: auto;
         display: table;
       }
       h4 {
-        text-align: center;
-        margin-bottom: 2em;
         font-size: 1.2rem;
+        text-align: center;
       }
+      h5 {
+        font-size: 0.9rem;
+        font-weight: 500;
+        margin-top: -1em;
+        text-align: center;
+      }
+
       h1 {
         text-align: center;
         font-size: 3.2rem;
@@ -148,11 +166,20 @@ const TestimonialsTag = styled.div`
           font-size: 3.8rem;
         }
         q {
-          font-size: 1.7rem;
+          font-size: 1.1rem;
         }
       }
       &__split > * {
         flex-basis: 100%;
+      }
+    }
+  }
+  @media (min-width: 1350px) {
+    .testimonialpage {
+      &__split {
+        q {
+          font-size: 1.3rem;
+        }
       }
     }
   }
