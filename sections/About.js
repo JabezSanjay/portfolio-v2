@@ -1,11 +1,9 @@
 import React, { useEffect, useRef } from "react";
-var Scroll = require("react-scroll");
 import Image from "next/image";
 import styled from "styled-components";
 import COLORS from "../assets/colors";
 import Button from "../components/Button";
 import { fadePageAnimation } from "../components/Animations";
-var Element = Scroll.Element;
 
 const About = () => {
   let reveal1 = useRef(null);
@@ -20,38 +18,36 @@ const About = () => {
 
   return (
     <AboutTag>
-      <Element name="about">
-        <div className="sections">
-          <section className="aboutpage">
-            <div className="aboutpage__container">
-              <div className="aboutpage__split">
-                <div ref={(el) => (reveal1 = el)}>
-                  <Image
-                    height={353}
-                    width={627}
-                    src="/Images/about-illustration.svg"
-                  />
-                </div>
-                <div>
-                  <div className="notation" ref={(el) => (reveal2 = el)}></div>
-                  <h2 ref={(el) => (reveal3 = el)}>
-                    I enjoy creating delightful, human centered digital
-                    experiences.
-                  </h2>
-                  <h1 ref={(el) => (reveal4 = el)}>
-                    <span>Think. </span>
-                    Make.
-                    <span> Solve!</span>
-                  </h1>
-                  <div ref={(el) => (reveal5 = el)}>
-                    <Button name="Contact Me" />
-                  </div>
+      <div className="sections">
+        <section className="aboutpage">
+          <div className="aboutpage__container">
+            <div className="aboutpage__split">
+              <div ref={(el) => (reveal1 = el)}>
+                <Image
+                  height={353}
+                  width={627}
+                  src="/Images/about-illustration.svg"
+                />
+              </div>
+              <div>
+                <div className="notation" ref={(el) => (reveal2 = el)}></div>
+                <h2 ref={(el) => (reveal3 = el)}>
+                  I enjoy creating delightful, human centered digital
+                  experiences.
+                </h2>
+                <h1 ref={(el) => (reveal4 = el)}>
+                  <span>Think. </span>
+                  Make.
+                  <span> Solve!</span>
+                </h1>
+                <div ref={(el) => (reveal5 = el)}>
+                  <Button name="Contact Me" />
                 </div>
               </div>
             </div>
-          </section>
-        </div>
-      </Element>
+          </div>
+        </section>
+      </div>
     </AboutTag>
   );
 };

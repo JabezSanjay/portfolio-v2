@@ -1,6 +1,4 @@
 import React, { useEffect, useRef } from "react";
-var Scroll = require("react-scroll");
-var Element = Scroll.Element;
 import styled from "styled-components";
 import COLORS from "../assets/colors";
 import { fadePageAnimation } from "../components/Animations";
@@ -18,34 +16,32 @@ const Services = () => {
 
   return (
     <ServicesTag>
-      <Element name="services">
-        <div className="sections">
-          <section className="servicespage">
-            <div className="servicespage__container">
-              <div className="servicespage__split">
-                <div>
-                  <div className="notation" ref={(el) => (reveal1 = el)}></div>
-                  <h2 ref={(el) => (reveal2 = el)}>
-                    Experienced building web application with backend API
-                    systems using the below stack!
-                  </h2>
-                  <div ref={(el) => (reveal3 = el)}>
-                    <Button name="Portfolio" dark="dark" />
-                  </div>
-                </div>
-                <div ref={(el) => (reveal4 = el)}>
-                  <h1>
-                    <span>MongoDB</span>
-                    Express
-                    <span>React</span>
-                    Node
-                  </h1>
+      <div className="sections">
+        <section className="servicespage">
+          <div className="servicespage__container">
+            <div className="servicespage__split">
+              <div>
+                <div className="notation" ref={(el) => (reveal1 = el)}></div>
+                <h2 ref={(el) => (reveal2 = el)}>
+                  Experienced building web application with backend API systems
+                  using the below stack!
+                </h2>
+                <div ref={(el) => (reveal3 = el)}>
+                  <Button name="Portfolio" dark="dark" />
                 </div>
               </div>
+              <div ref={(el) => (reveal4 = el)}>
+                <h1>
+                  <span>MongoDB</span>
+                  Express
+                  <span>React</span>
+                  Node
+                </h1>
+              </div>
             </div>
-          </section>
-        </div>
-      </Element>
+          </div>
+        </section>
+      </div>
     </ServicesTag>
   );
 };

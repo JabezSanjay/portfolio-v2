@@ -2,8 +2,6 @@ import React, { useEffect, useRef } from "react";
 import Testimonial from "../components/Testimonial";
 import styled from "styled-components";
 import COLORS from "../assets/colors";
-var Scroll = require("react-scroll");
-var Element = Scroll.Element;
 import { fadePageAnimation } from "../components/Animations";
 
 const Testimonials = () => {
@@ -19,39 +17,39 @@ const Testimonials = () => {
 
   return (
     <TestimonialsTag>
-      <Element name="testimonial">
-        <div className="sections">
-          <section className="testimonialpage">
-            <div className="testimonialpage__container">
-              <h1 ref={(el) => (reveal1 = el)}>Testimonial</h1>
-              <div className="testimonialpage__split">
-                <div ref={(el) => (reveal2 = el)}>
-                  <Testimonial />
-                </div>
-                <div>
-                  {/* <div className="notation"></div> */}
-                  <h2 ref={(el) => (reveal3 = el)}>
-                    I enjoy creating delightful, human centered digital
-                    experiences.
-                  </h2>
-                </div>
+      <div className="sections">
+        <section className="testimonialpage">
+          <div className="testimonialpage__container">
+            <h1 ref={(el) => (reveal1 = el)}>Testimonial</h1>
+            <div className="testimonialpage__split">
+              <div ref={(el) => (reveal2 = el)}>
+                <Testimonial />
               </div>
-              <div className="testimonialpage__split">
-                <div className="changeable__1" ref={(el) => (reveal4 = el)}>
-                  <Testimonial />
-                </div>
-                <div className="changeable__2">
-                  {/* <div className="notation"></div> */}
-                  <h2 ref={(el) => (reveal5 = el)}>
-                    I enjoy creating delightful, human centered digital
-                    experiences.
-                  </h2>
-                </div>
+              <div ref={(el) => (reveal3 = el)}>
+                {/* <div className="notation"></div> */}
+                <q>
+                  I enjoy creating delightful, human centered digital
+                  experiences.
+                </q>
+                <h4>- Jegan</h4>
               </div>
             </div>
-          </section>
-        </div>
-      </Element>
+            <div className="testimonialpage__split">
+              <div className="changeable__1" ref={(el) => (reveal4 = el)}>
+                <Testimonial />
+              </div>
+              <div className="changeable__2" ref={(el) => (reveal5 = el)}>
+                {/* <div className="notation"></div> */}
+                <q>
+                  I enjoy creating delightful, human centered digital
+                  experiences.
+                </q>
+                <h4>- Jayesh</h4>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
     </TestimonialsTag>
   );
 };
@@ -61,6 +59,9 @@ export default Testimonials;
 const TestimonialsTag = styled.div`
   .testimonialpage {
     background-color: #ffffff;
+    background-image: url("/Images/testimonial-bg.svg");
+    background-attachment: fixed;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -79,6 +80,7 @@ const TestimonialsTag = styled.div`
           display: flex;
           justify-content: center;
           align-items: center;
+          margin-top: 2em;
         }
       }
     }
@@ -101,10 +103,17 @@ const TestimonialsTag = styled.div`
         }
       } */
 
-      h2 {
+      q {
         color: ${COLORS.PRIMARY_BLACK};
         text-align: center;
-        font-size: 1.3rem;
+        font-size: 1.6rem;
+        width: auto;
+        display: table;
+      }
+      h4 {
+        text-align: center;
+        margin-bottom: 2em;
+        font-size: 1.2rem;
       }
       h1 {
         text-align: center;
@@ -138,7 +147,7 @@ const TestimonialsTag = styled.div`
         h1 {
           font-size: 3.8rem;
         }
-        h2 {
+        q {
           font-size: 1.7rem;
         }
       }
