@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import styled from "styled-components";
 
-const Testimonial = () => {
+const Testimonial = ({ personImage }) => {
   return (
     <TestimonialTag>
       <main>
@@ -12,7 +12,7 @@ const Testimonial = () => {
               <Image
                 height={500}
                 width={500}
-                src="/Images/image-jegan.jpg"
+                src={personImage}
                 alt="Author Image"
               />
             </div>

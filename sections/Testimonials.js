@@ -23,7 +23,7 @@ const Testimonials = () => {
             <h1 ref={(el) => (reveal1 = el)}>Testimonial</h1>
             <div className="testimonialpage__split">
               <div ref={(el) => (reveal2 = el)}>
-                <Testimonial />
+                <Testimonial personImage="/Images/image-jegan.jpg" />
               </div>
               <div ref={(el) => (reveal3 = el)}>
                 {/* <div className="notation"></div> */}
@@ -44,7 +44,7 @@ const Testimonials = () => {
             </div>
             <div className="testimonialpage__split">
               <div className="changeable__1" ref={(el) => (reveal4 = el)}>
-                <Testimonial />
+                <Testimonial personImage="/Images/image-jayesh.jpg" />
               </div>
               <div className="changeable__2" ref={(el) => (reveal5 = el)}>
                 {/* <div className="notation"></div> */}

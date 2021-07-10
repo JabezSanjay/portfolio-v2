@@ -32,13 +32,15 @@ const Portfolio = () => {
                   name="Ecommerce WebApp"
                   description="MongoDB | Express | React | NodeJs"
                   url="https://tshirts-mern.herokuapp.com/"
+                  image="/Images/ecommerce-project.jpg"
                 />
               </div>
               <div ref={(el) => (reveal4 = el)}>
                 <Card
-                  name="Ecommerce WebApp"
-                  description="MongoDB | Express | React | NodeJs"
+                  name="Movie Nomination"
+                  description="React | Context API"
                   url="https://tshirts-mern.herokuapp.com/"
+                  image="/Images/shoppies-project.jpg"
                 />
               </div>
             </div>
