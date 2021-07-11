@@ -32,12 +32,6 @@ const Services = () => {
                 </div>
               </div>
               <div ref={(el) => (reveal4 = el)}>
-                {/* <h1>
-                  <span>MongoDB</span>
-                  Express
-                  <span>React</span>
-                  Node
-                </h1> */}
                 <SkewStack />
               </div>
             </div>
@@ -88,20 +82,7 @@ const ServicesTag = styled.div`
         text-align: center;
         font-size: 1.6rem;
       }
-      /* h1 {
-        text-align: center;
-        font-size: 3.2rem;
-        color: ${COLORS.TERTIARY_COLOR};
-        display: block;
-        transform: skew(60deg, -20deg) scaleY(0.66667);
 
-        span {
-          font-weight: 800;
-          -webkit-text-stroke: 1px ${COLORS.TERTIARY_COLOR};
-          -webkit-text-fill-color: white;
-          display: block;
-        }
-      } */
       button {
         margin: 0em auto;
         display: block;

@@ -65,6 +65,7 @@ const AboutTag = styled.div`
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    z-index: 999;
     &__container {
       margin-inline: auto;
       width: min(90%, 85rem);

@@ -49,14 +49,12 @@ const Testimonials = () => {
               <div className="changeable__2" ref={(el) => (reveal5 = el)}>
                 {/* <div className="notation"></div> */}
                 <q>
-                  I worked with Jabez on multiple projects. I love his
-                  dedication towards the work, especially taking ownership of
-                  the project. His eagerness to learn new technology and
-                  parallel implementation is something amusing. I recommend him
-                  as an expert in React, Node, MERN/Fullstack Engineer!
+                  Jabez has shown a great knowledge in the development of
+                  applications. He comes out with innovative ideas and he is
+                  ready to learn new technologies in the fast changing industry.
                 </q>
                 <h4>- Jayesh Bino Rajiv</h4>
-                <h5>Senior Software Developer - Wipro Technologies</h5>
+                <h5>Senior Software Engineer - Wipro Limited</h5>
               </div>
             </div>
           </div>

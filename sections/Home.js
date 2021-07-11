@@ -22,7 +22,6 @@ const Home = () => {
     <HomeTag>
       <div className="main" ref={(el) => (homepage = el)}>
         <Navbar />
-
         <section className="homepage">
           <div className="homepage__container">
             <div className="homepage__split">
