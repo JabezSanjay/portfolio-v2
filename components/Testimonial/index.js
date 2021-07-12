@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import styled from "styled-components";
 
-const Testimonial = () => {
+const Testimonial = ({ personImage }) => {
   return (
     <TestimonialTag>
       <main>
@@ -10,9 +10,9 @@ const Testimonial = () => {
           <div className="slide">
             <div className="slider-img">
               <Image
-                height={540}
-                width={540}
-                src="/Images/image-jegan.jpg"
+                height={500}
+                width={500}
+                src={personImage}
                 alt="Author Image"
               />
             </div>
@@ -85,13 +85,6 @@ const TestimonialTag = styled.div`
           background-position: top;
           background-repeat: no-repeat;
           background-image: url("https://alcs-slider.netlify.app/images/pattern-quotes.svg");
-
-          blockquote {
-            font-size: 18px;
-            font-weight: 300;
-            line-height: 24px;
-            margin-bottom: 36px;
-          }
 
           .author {
             font-size: 15px;

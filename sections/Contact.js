@@ -1,6 +1,4 @@
 import React, { useEffect, useRef } from "react";
-var Scroll = require("react-scroll");
-var Element = Scroll.Element;
 import styled from "styled-components";
 import COLORS from "../assets/colors";
 import { fadePageAnimation } from "../components/Animations";
@@ -15,46 +13,44 @@ const Contact = () => {
   }, []);
 
   return (
-    <Element name="contact">
-      <ContactTag>
-        <section className="contactpage">
-          <div className="sections">
-            <div className="notation" ref={(el) => (reveal1 = el)}></div>
-            <h3 ref={(el) => (reveal2 = el)}>
-              I’d love to meet up with you to discuss your venture, and
-              potential collaborations.
-            </h3>
-            <div className="mailbg" ref={(el) => (reveal3 = el)}>
-              <label className="l1" htmlFor="mailinput">
-                Your Email :
-              </label>
-              <input
-                className="mailinput"
-                aria-label="Your Email"
-                autoComplete="on"
-                type="email"
-                placeholder=""
-              />
-              <label className="l2" htmlFor="messtxt">
-                Your Message :
-              </label>
-              <textarea
-                className="messtxt"
-                aria-label="Your Message"
-                placeholder=""
-              ></textarea>
-              <button className="sendmess" aria-label="Send message">
-                Send<div className="bar"></div>
-              </button>
-              <div className="success">Message sent successfully. Thanks!</div>
-              <button className="closemess" aria-label="Close Form">
-                Close
-              </button>
-            </div>
+    <ContactTag>
+      <section className="contactpage">
+        <div className="sections">
+          <div className="notation" ref={(el) => (reveal1 = el)}></div>
+          <h3 ref={(el) => (reveal2 = el)}>
+            I’d love to meet up with you to discuss your venture, and potential
+            collaborations.
+          </h3>
+          <div className="mailbg" ref={(el) => (reveal3 = el)}>
+            <label className="l1" htmlFor="mailinput">
+              Your Email :
+            </label>
+            <input
+              className="mailinput"
+              aria-label="Your Email"
+              autoComplete="on"
+              type="email"
+              placeholder=""
+            />
+            <label className="l2" htmlFor="messtxt">
+              Your Message :
+            </label>
+            <textarea
+              className="messtxt"
+              aria-label="Your Message"
+              placeholder=""
+            ></textarea>
+            <button className="sendmess" aria-label="Send message">
+              Send<div className="bar"></div>
+            </button>
+            <div className="success">Message sent successfully. Thanks!</div>
+            <button className="closemess" aria-label="Close Form">
+              Close
+            </button>
           </div>
-        </section>
-      </ContactTag>
-    </Element>
+        </div>
+      </section>
+    </ContactTag>
   );
 };
 

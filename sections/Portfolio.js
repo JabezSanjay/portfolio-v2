@@ -1,11 +1,9 @@
 import React, { useEffect, useRef } from "react";
-var Scroll = require("react-scroll");
 import styled from "styled-components";
 import COLORS from "../assets/colors";
 import { fadePageAnimation } from "../components/Animations";
 import Button from "../components/Button";
 import Card from "../components/Card";
-var Element = Scroll.Element;
 
 const Portfolio = () => {
   let reveal1 = useRef(null);
@@ -19,42 +17,42 @@ const Portfolio = () => {
 
   return (
     <PortfolioTag>
-      <Element name="portfolio">
-        <div className="sections">
-          <section className="portfoliopage">
-            <div className="portfoliopage__container">
-              <h2 className="text-center" ref={(el) => (reveal1 = el)}>
-                Look at My Products.
-              </h2>
-              <div ref={(el) => (reveal2 = el)}>
-                <Button name="Contact Me" />
+      <div className="sections" id="portfolio">
+        <section className="portfoliopage">
+          <div className="portfoliopage__container">
+            <h2 className="text-center" ref={(el) => (reveal1 = el)}>
+              Look at My Products.
+            </h2>
+            <div ref={(el) => (reveal2 = el)}>
+              <Button name="Contact Me" />
+            </div>
+            <div className="portfoliopage__split">
+              <div ref={(el) => (reveal3 = el)}>
+                <Card
+                  name="Ecommerce WebApp"
+                  description="MongoDB | Express | React | NodeJs"
+                  url="https://tshirts-mern.herokuapp.com/"
+                  image="/Images/ecommerce-project.jpg"
+                />
               </div>
-              <div className="portfoliopage__split">
-                <div ref={(el) => (reveal3 = el)}>
-                  <Card
-                    name="Ecommerce WebApp"
-                    description="MongoDB | Express | React | NodeJs"
-                    url="https://tshirts-mern.herokuapp.com/"
-                  />
-                </div>
-                <div ref={(el) => (reveal4 = el)}>
-                  <Card
-                    name="Ecommerce WebApp"
-                    description="MongoDB | Express | React | NodeJs"
-                    url="https://tshirts-mern.herokuapp.com/"
-                  />
-                </div>
+              <div ref={(el) => (reveal4 = el)}>
+                <Card
+                  name="Movie Nomination"
+                  description="React | Context API"
+                  url="https://tshirts-mern.herokuapp.com/"
+                  image="/Images/shoppies-project.jpg"
+                />
               </div>
+            </div>
 
-              {/* <h1>
+            {/* <h1>
                 <span>Think. </span>
                 Make.
                 <span> Solve!</span>
               </h1>*/}
-            </div>
-          </section>
-        </div>
-      </Element>
+          </div>
+        </section>
+      </div>
     </PortfolioTag>
   );
 };

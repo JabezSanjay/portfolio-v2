@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import Button from "../Button";
 import styled from "styled-components";
 import { ExternalLink } from "react-external-link";
@@ -10,16 +9,17 @@ const Card = (props) => {
   let projectDescription = props.description;
   let projectImage = props.image;
   let projectUrl = props.url;
+
   return (
     <CardTag>
-      <div className="box">
-        <div className="text">
-          <ExternalLink href={projectUrl}>
-            <div>
-              <h3>{projectName}</h3>
-              <p>{projectDescription}</p>
-            </div>
-          </ExternalLink>
+      <div className="card" style={{ backgroundImage: `url(${props.image})` }}>
+        <div className="inner">
+          <h2 className="title">{projectName}</h2>
+          <time className="subtitle">{projectDescription}</time>
+          <div className="button">
+            <button className="code-button">Code</button>
+            <button className="preview-button">Preview</button>
+          </div>
         </div>
       </div>
     </CardTag>
@@ -29,204 +29,88 @@ const Card = (props) => {
 export default Card;
 
 const CardTag = styled.div`
-  .box {
-    background-color: transparent;
-    border-radius: 3px;
+  .card {
+    height: 400px;
     position: relative;
-    left: 50%;
-    top: 100%;
-    margin-top: 11em;
-    color: ${COLORS.SECONDARY_COLOR};
-    transform: translate(-50%, -50%);
-    width: 280px;
-    height: 300px;
-    transform-style: preserve-3d;
-    perspective: 2000px;
-    transition: 0.4s;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-end;
+    text-decoration: none;
+
+    margin-bottom: 20px;
+    background-size: cover;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    margin: 0 0.75em 1.25em 0.75em;
+  }
+
+  .inner {
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    box-sizing: border-box;
+    padding: 10px;
+    opacity: 0.9;
+  }
+
+  .title {
+    font-size: 24px;
+    color: black;
     text-align: center;
-    cursor: pointer;
-    transform: translate(-50%, -50%) rotateY(-20deg) skewY(3deg);
-    &:before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
+    font-weight: 700;
+    color: ${COLORS.PRIMARY_BLACK};
+    text-shadow: 0px 2px 2px #a6f8d5;
+    position: relative;
+    margin: 0 0 20px 0;
+  }
+
+  .subtitle {
+    color: ${COLORS.PRIMARY_COLOR};
+    text-align: center;
+  }
+  .button {
+    display: flex;
+    margin-top: -1em;
+    button {
+      background-color: transparent;
+      border: 2px solid ${COLORS.PURPLE_COLOR};
+      color: ${COLORS.PURPLE_COLOR};
+      padding: 12px 16px;
+      font-size: 16px;
+      cursor: pointer;
+      opacity: 1;
+      transform: skewX(-10deg);
+      :hover {
+        background: ${COLORS.PURPLE_COLOR};
+        color: ${COLORS.SECONDARY_COLOR};
+      }
+    }
+    .code-button {
+      margin-right: 0.5em;
+    }
+    .preview-button {
+      margin-left: 0.5em;
+    }
+  }
+
+  @media (min-width: 981px) {
+    .siteTitle {
+      font-size: 60px;
+    }
+    .card {
+      height: 500px;
+    }
+    .inner {
+      width: 50%;
       height: 100%;
-      background: transparent;
-      border-top: 20px solid ${COLORS.PRIMARY_COLOR};
-      border-left: 20px solid ${COLORS.PRIMARY_COLOR};
-      box-sizing: border-box;
+      opacity: 1;
     }
-    &:after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border-bottom: 20px solid ${COLORS.PRIMARY_COLOR};
-      border-right: 20px solid ${COLORS.PRIMARY_COLOR};
-      box-sizing: border-box;
-    }
-
-    .text {
-      transform: rotateY(20deg) skewY(-3deg);
-      position: absolute;
-      top: 30px;
-      left: -30px;
-      width: calc(100% + 60px);
-      height: calc(100% - 60px);
-      background-color: ${COLORS.PRIMARY_BLACK};
-      border-radius: 3px;
-      transition: 0.4s;
-      div {
-        position: absolute;
-        top: 50%;
-        left: 0;
-        transform: translateY(-50%);
-        text-align: center;
-        padding: 30px 60px;
-        h3 {
-          font-size: 25px;
-          margin-bottom: 5px;
-          color: ${COLORS.TERTIARY_COLOR};
-        }
-        p {
-          font-size: 12.5px;
-          letter-spacing: 3px;
-        }
-        img {
-          width: 200px;
-        }
-      }
-    }
-  }
-
-  /* Moto G5 */
-  @media (min-width: 331px) and (max-width: 370px) {
-    .box {
-      width: 260px;
-      height: 300px;
-      .text {
-        div {
-          h3 {
-            font-size: 24px;
-          }
-          p {
-            font-size: 13px;
-          }
-          img {
-            width: 200px;
-          }
-        }
-      }
-    }
-  }
-  /* iPhone SE & 5 */
-  @media (min-width: 300px) and (max-width: 330px) {
-    .box {
-      width: 230px;
-      height: 300px;
-      .text {
-        div {
-          margin-left: -20px;
-          h3 {
-            font-size: 22.5px;
-          }
-          p {
-            font-size: 13px;
-          }
-          img {
-            width: 190px;
-          }
-        }
-      }
-    }
-  }
-  /* Galaxy Fold Devices */
-  @media (min-width: 240px) and (max-width: 290px) {
-    .box {
-      width: 200px;
-      height: 300px;
-
-      .text {
-        div {
-          margin-left: -30px;
-          h3 {
-            font-size: 22.5px;
-          }
-          p {
-            font-size: 13px;
-          }
-          img {
-            width: 190px;
-          }
-        }
-      }
-    }
-  }
-
-  /* iPad Devices */
-  @media (min-width: 720px) and (max-width: 800px) {
-    .box {
-      width: 400px;
-      height: 330px;
-      .text {
-        div {
-          h3 {
-            font-size: 30px;
-          }
-          p {
-            font-size: 15px;
-          }
-          img {
-            width: 250px;
-          }
-        }
-      }
-    }
-  }
-
-  /* iPad Pro Devices */
-  @media (min-width: 950px) and (max-width: 1100px) {
-    .box {
-      width: 400px;
-      height: 350px;
-      .text {
-        div {
-          h3 {
-            font-size: 30px;
-          }
-          p {
-            font-size: 15px;
-          }
-          img {
-            width: 250px;
-          }
-        }
-      }
-    }
-  }
-
-  /* Big Screen Devices */
-  @media (min-width: 1101px) {
-    .box {
-      width: 400px;
-      height: 330px;
-      .text {
-        div {
-          h3 {
-            font-size: 32.5px;
-          }
-          p {
-            font-size: 15px;
-          }
-          img {
-            width: 250px;
-          }
-        }
-      }
+    .title {
+      font-size: 30px;
     }
   }
 `;

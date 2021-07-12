@@ -1,10 +1,9 @@
 import React, { useEffect, useRef } from "react";
-var Scroll = require("react-scroll");
-var Element = Scroll.Element;
 import styled from "styled-components";
 import COLORS from "../assets/colors";
 import { fadePageAnimation } from "../components/Animations";
 import Button from "../components/Button";
+import SkewStack from "../components/SkewStack";
 
 const Services = () => {
   let reveal1 = useRef(null);
@@ -18,34 +17,27 @@ const Services = () => {
 
   return (
     <ServicesTag>
-      <Element name="services">
-        <div className="sections">
-          <section className="servicespage">
-            <div className="servicespage__container">
-              <div className="servicespage__split">
-                <div>
-                  <div className="notation" ref={(el) => (reveal1 = el)}></div>
-                  <h2 ref={(el) => (reveal2 = el)}>
-                    Experienced building web application with backend API
-                    systems using the below stack!
-                  </h2>
-                  <div ref={(el) => (reveal3 = el)}>
-                    <Button name="Portfolio" dark="dark" />
-                  </div>
-                </div>
-                <div ref={(el) => (reveal4 = el)}>
-                  <h1>
-                    <span>MongoDB</span>
-                    Express
-                    <span>React</span>
-                    Node
-                  </h1>
+      <div className="sections">
+        <section className="servicespage">
+          <div className="servicespage__container">
+            <div className="servicespage__split">
+              <div>
+                <div className="notation" ref={(el) => (reveal1 = el)}></div>
+                <h2 ref={(el) => (reveal2 = el)}>
+                  Experienced building web application with backend API systems
+                  using the below stack!
+                </h2>
+                <div ref={(el) => (reveal3 = el)}>
+                  <Button name="Portfolio" dark="dark" />
                 </div>
               </div>
+              <div ref={(el) => (reveal4 = el)}>
+                <SkewStack />
+              </div>
             </div>
-          </section>
-        </div>
-      </Element>
+          </div>
+        </section>
+      </div>
     </ServicesTag>
   );
 };
@@ -90,18 +82,7 @@ const ServicesTag = styled.div`
         text-align: center;
         font-size: 1.6rem;
       }
-      h1 {
-        text-align: center;
-        font-size: 3.2rem;
-        color: ${COLORS.TERTIARY_COLOR};
-        display: block;
-        span {
-          font-weight: 800;
-          -webkit-text-stroke: 1px ${COLORS.TERTIARY_COLOR};
-          -webkit-text-fill-color: white;
-          display: block;
-        }
-      }
+
       button {
         margin: 0em auto;
         display: block;

@@ -9,8 +9,6 @@ import {
   staggerRevealClose,
 } from "../Animations";
 import COLORS from "../../assets/colors";
-var Scroll = require("react-scroll");
-var scroller = Scroll.scroller;
 
 const Hamburger = ({ state, opened }) => {
   // Create varibles of our dom nodes
@@ -44,8 +42,7 @@ const Hamburger = ({ state, opened }) => {
     }
   }, [opened]);
 
-  const handleScroll = (page) => {
-    scroller.scrollTo(`${page}`);
+  const handleScroll = () => {
     state(false);
   };
 
@@ -63,9 +60,7 @@ const Hamburger = ({ state, opened }) => {
                 onMouseEnter={(e) => handleHover(e)}
                 onMouseOut={(e) => handleHoverExit(e)}
                 ref={(el) => (line1 = el)}
-                onClick={() => {
-                  handleScroll("home");
-                }}
+                onClick={handleScroll}
               >
                 Home
               </li>
@@ -73,9 +68,7 @@ const Hamburger = ({ state, opened }) => {
                 onMouseEnter={(e) => handleHover(e)}
                 onMouseOut={(e) => handleHoverExit(e)}
                 ref={(el) => (line2 = el)}
-                onClick={() => {
-                  handleScroll("about");
-                }}
+                onClick={handleScroll}
               >
                 About
               </li>
@@ -83,9 +76,7 @@ const Hamburger = ({ state, opened }) => {
                 onMouseEnter={(e) => handleHover(e)}
                 onMouseOut={(e) => handleHoverExit(e)}
                 ref={(el) => (line3 = el)}
-                onClick={() => {
-                  handleScroll("services");
-                }}
+                onClick={handleScroll}
               >
                 Services
               </li>
@@ -94,9 +85,7 @@ const Hamburger = ({ state, opened }) => {
                 onMouseEnter={(e) => handleHover(e)}
                 onMouseOut={(e) => handleHoverExit(e)}
                 ref={(el) => (line4 = el)}
-                onClick={() => {
-                  handleScroll("portfolio");
-                }}
+                onClick={handleScroll}
               >
                 Portfolio
               </li>
@@ -105,9 +94,7 @@ const Hamburger = ({ state, opened }) => {
                 onMouseEnter={(e) => handleHover(e)}
                 onMouseOut={(e) => handleHoverExit(e)}
                 ref={(el) => (line5 = el)}
-                onClick={() => {
-                  handleScroll("contact");
-                }}
+                onClick={handleScroll}
               >
                 Contact
               </li>

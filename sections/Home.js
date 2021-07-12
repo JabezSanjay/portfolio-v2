@@ -1,7 +1,5 @@
 import React, { useEffect, useRef } from "react";
 import styled from "styled-components";
-var Scroll = require("react-scroll");
-var Element = Scroll.Element;
 import gsap from "gsap";
 import Image from "next/image";
 import COLORS from "../assets/colors";
@@ -22,36 +20,33 @@ const Home = () => {
 
   return (
     <HomeTag>
-      <Element name="home">
-        <div className="main" ref={(el) => (homepage = el)}>
-          <Navbar />
-
-          <section className="homepage">
-            <div className="homepage__container">
-              <div className="homepage__split">
-                <div>
-                  <h1 ref={(el) => (reveal1 = el)}>
-                    I bridge the gap between
-                    <span> you</span> and your <span>customer</span> using{" "}
-                    <span>code!</span>
-                  </h1>
-                  <div ref={(el) => (reveal2 = el)}>
-                    <Button name="Portfolio" />
-                  </div>
-                </div>
-
-                <div ref={(el) => (reveal3 = el)}>
-                  <Image
-                    height={353}
-                    width={627}
-                    src="/Images/Homepage_Illustration.svg"
-                  />
+      <div className="main" ref={(el) => (homepage = el)}>
+        <Navbar />
+        <section className="homepage">
+          <div className="homepage__container">
+            <div className="homepage__split">
+              <div>
+                <h1 ref={(el) => (reveal1 = el)}>
+                  I bridge the gap between
+                  <span> you</span> and your <span>customer</span> using{" "}
+                  <span>code!</span>
+                </h1>
+                <div ref={(el) => (reveal2 = el)}>
+                  <Button name="Portfolio" />
                 </div>
               </div>
+
+              <div ref={(el) => (reveal3 = el)}>
+                <Image
+                  height={353}
+                  width={627}
+                  src="/Images/Homepage_Illustration.svg"
+                />
+              </div>
             </div>
-          </section>
-        </div>
-      </Element>
+          </div>
+        </section>
+      </div>
     </HomeTag>
   );
 };
