@@ -186,6 +186,7 @@ const HamburgerTag = styled.div`
           justify-content: center;
           background: url("Images/bg-header.png") no-repeat;
           ul {
+            margin-top: 0;
             li {
               margin: 1.5em 0.75em 1.5em 0;
               font-size: 2.5rem;
