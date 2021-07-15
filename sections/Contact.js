@@ -1,16 +1,52 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import COLORS from "../assets/colors";
 import { fadePageAnimation } from "../components/Animations";
+import { useForm } from "react-hook-form";
+import emailjs from "emailjs-com";
+import { useToasts } from "react-toast-notifications";
 
 const Contact = () => {
   let reveal1 = useRef(null);
   let reveal2 = useRef(null);
   let reveal3 = useRef(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     fadePageAnimation(reveal1, reveal2, reveal3);
   }, []);
+
+  const { addToast } = useToasts();
+
+  const {
+    register,
+    formState: { errors },
+    handleSubmit,
+    reset,
+  } = useForm();
+  const onSubmit = async (data) => {
+    setLoading(true);
+    await emailjs
+      .send(
+        "service_6988yt7",
+        "template_0ymfk2h",
+        data,
+        "user_tGuRAsWBDoxAvgeekA91U"
+      )
+      .then(
+        function (response) {
+          setLoading(false);
+          addToast("Message sent successfully!", {
+            appearance: "success",
+            autoDismiss: true,
+          });
+          reset({ register });
+        },
+        function (error) {
+          console.log("FAILED...", error);
+        }
+      );
+  };
 
   return (
     <ContactTag>
@@ -22,31 +58,56 @@ const Contact = () => {
             collaborations.
           </h3>
           <div className="mailbg" ref={(el) => (reveal3 = el)}>
-            <label className="l1" htmlFor="mailinput">
-              Your Email :
-            </label>
-            <input
-              className="mailinput"
-              aria-label="Your Email"
-              autoComplete="on"
-              type="email"
-              placeholder=""
-            />
-            <label className="l2" htmlFor="messtxt">
-              Your Message :
-            </label>
-            <textarea
-              className="messtxt"
-              aria-label="Your Message"
-              placeholder=""
-            ></textarea>
-            <button className="sendmess" aria-label="Send message">
-              Send<div className="bar"></div>
-            </button>
-            <div className="success">Message sent successfully. Thanks!</div>
-            <button className="closemess" aria-label="Close Form">
-              Close
-            </button>
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <label className="l1" htmlFor="mailinput">
+                Your Email :
+              </label>
+              <input
+                className="mailinput"
+                aria-label="Your Email"
+                autoComplete="on"
+                type="email"
+                placeholder=""
+                {...register("email", {
+                  required: "Please enter your email!",
+                  pattern: {
+                    value: /\S+@\S+\.\S+/,
+                    message: "Please enter a valid email!",
+                  },
+                })}
+              />
+              {errors.email && (
+                <p className="error-message-email">{errors.email.message}</p>
+              )}
+
+              <label className="l2" htmlFor="messtxt">
+                Your Message :
+              </label>
+              <textarea
+                className="messtxt"
+                aria-label="Your Message"
+                placeholder=""
+                {...register("message", {
+                  required: "Please enter your messsage!",
+                  maxLength: {
+                    value: 500,
+                    message: "Enter below 500 words please!",
+                  },
+                })}
+              ></textarea>
+              {errors.message && (
+                <p className="error-message">{errors.message.message}</p>
+              )}
+              {loading ? (
+                <button className="sendmess" aria-label="Send message">
+                  Sending...
+                </button>
+              ) : (
+                <button className="sendmess" aria-label="Send message">
+                  Send
+                </button>
+              )}
+            </form>
           </div>
         </div>
       </section>
@@ -103,6 +164,23 @@ const ContactTag = styled.div`
         -webkit-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
         transform: translate(-50%, -50%);
+        .error-message-email {
+          position: absolute;
+          font-size: 0.8rem;
+          color: #750000;
+          font-weight: 500;
+          top: 92px;
+          left: 5%;
+        }
+        .error-message {
+          position: absolute;
+          font-size: 0.8rem;
+          color: #750000;
+          font-weight: 500;
+          top: 395px;
+          left: 5%;
+          z-index: 999;
+        }
       }
 
       .mailbg:before {
@@ -182,7 +260,7 @@ const ContactTag = styled.div`
 
       .sendmess {
         position: absolute;
-        top: 420px;
+        top: 430px;
         left: 50%;
         -webkit-transform: translate(-50%, -0%);
         -ms-transform: translate(-50%, -0%);

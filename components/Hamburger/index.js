@@ -99,7 +99,7 @@ const Hamburger = ({ state, opened }) => {
                 </li>
               </a>
 
-              <a href="#contact">
+              <a href="#contactpage">
                 <li
                   onMouseEnter={(e) => handleHover(e)}
                   onMouseOut={(e) => handleHoverExit(e)}

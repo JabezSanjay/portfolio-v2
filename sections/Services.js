@@ -17,7 +17,7 @@ const Services = () => {
 
   return (
     <ServicesTag>
-      <div className="sections">
+      <div className="sections" id="servicespage">
         <section className="servicespage">
           <div className="servicespage__container">
             <div className="servicespage__split">
