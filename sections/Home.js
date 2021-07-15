@@ -20,7 +20,7 @@ const Home = () => {
 
   return (
     <HomeTag>
-      <div className="main" ref={(el) => (homepage = el)}>
+      <div className="main" ref={(el) => (homepage = el)} id="homepage">
         <Navbar />
         <section className="homepage">
           <div className="homepage__container">
@@ -32,7 +32,9 @@ const Home = () => {
                   <span>code!</span>
                 </h1>
                 <div ref={(el) => (reveal2 = el)}>
-                  <Button name="Portfolio" />
+                  <a href="#portfoliopage">
+                    <Button name="Portfolio" />
+                  </a>
                 </div>
               </div>
 

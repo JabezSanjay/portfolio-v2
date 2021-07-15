@@ -17,7 +17,7 @@ const Testimonials = () => {
 
   return (
     <TestimonialsTag>
-      <div className="sections">
+      <div className="sections" id="testimonialpage">
         <section className="testimonialpage">
           <div className="testimonialpage__container">
             <h1 ref={(el) => (reveal1 = el)}>Testimonial</h1>

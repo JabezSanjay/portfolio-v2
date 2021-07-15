@@ -28,7 +28,9 @@ const Services = () => {
                   using the below stack!
                 </h2>
                 <div ref={(el) => (reveal3 = el)}>
-                  <Button name="Portfolio" dark="dark" />
+                  <a href="#portfoliopage">
+                    <Button name="Portfolio" dark="dark" />
+                  </a>
                 </div>
               </div>
               <div ref={(el) => (reveal4 = el)}>

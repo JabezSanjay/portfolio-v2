@@ -18,7 +18,7 @@ const About = () => {
 
   return (
     <AboutTag>
-      <div className="sections">
+      <div className="sections" id="aboutpage">
         <section className="aboutpage">
           <div className="aboutpage__container">
             <div className="aboutpage__split">
@@ -41,7 +41,9 @@ const About = () => {
                   <span> Solve!</span>
                 </h1>
                 <div ref={(el) => (reveal5 = el)}>
-                  <Button name="Contact Me" />
+                  <a href="#contactpage">
+                    <Button name="Contact Me" />
+                  </a>
                 </div>
               </div>
             </div>

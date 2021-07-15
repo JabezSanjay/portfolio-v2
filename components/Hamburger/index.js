@@ -56,48 +56,59 @@ const Hamburger = ({ state, opened }) => {
         <div ref={(el) => (reveal2 = el)} className="menu-layer">
           <div className="menu-layer__items">
             <ul>
-              <li
-                onMouseEnter={(e) => handleHover(e)}
-                onMouseOut={(e) => handleHoverExit(e)}
-                ref={(el) => (line1 = el)}
-                onClick={handleScroll}
-              >
-                Home
-              </li>
-              <li
-                onMouseEnter={(e) => handleHover(e)}
-                onMouseOut={(e) => handleHoverExit(e)}
-                ref={(el) => (line2 = el)}
-                onClick={handleScroll}
-              >
-                About
-              </li>
-              <li
-                onMouseEnter={(e) => handleHover(e)}
-                onMouseOut={(e) => handleHoverExit(e)}
-                ref={(el) => (line3 = el)}
-                onClick={handleScroll}
-              >
-                Services
-              </li>
+              <a href="#homepage">
+                <li
+                  onMouseEnter={(e) => handleHover(e)}
+                  onMouseOut={(e) => handleHoverExit(e)}
+                  ref={(el) => (line1 = el)}
+                  onClick={handleScroll}
+                >
+                  Home
+                </li>
+              </a>
+              <a href="#aboutpage">
+                <li
+                  onMouseEnter={(e) => handleHover(e)}
+                  onMouseOut={(e) => handleHoverExit(e)}
+                  ref={(el) => (line2 = el)}
+                  onClick={handleScroll}
+                >
+                  About
+                </li>
+              </a>
 
-              <li
-                onMouseEnter={(e) => handleHover(e)}
-                onMouseOut={(e) => handleHoverExit(e)}
-                ref={(el) => (line4 = el)}
-                onClick={handleScroll}
-              >
-                Portfolio
-              </li>
+              <a href="#servicespage">
+                <li
+                  onMouseEnter={(e) => handleHover(e)}
+                  onMouseOut={(e) => handleHoverExit(e)}
+                  ref={(el) => (line3 = el)}
+                  onClick={handleScroll}
+                >
+                  Services
+                </li>
+              </a>
 
-              <li
-                onMouseEnter={(e) => handleHover(e)}
-                onMouseOut={(e) => handleHoverExit(e)}
-                ref={(el) => (line5 = el)}
-                onClick={handleScroll}
-              >
-                Contact
-              </li>
+              <a href="#portfoliopage">
+                <li
+                  onMouseEnter={(e) => handleHover(e)}
+                  onMouseOut={(e) => handleHoverExit(e)}
+                  ref={(el) => (line4 = el)}
+                  onClick={handleScroll}
+                >
+                  Portfolio
+                </li>
+              </a>
+
+              <a href="#contact">
+                <li
+                  onMouseEnter={(e) => handleHover(e)}
+                  onMouseOut={(e) => handleHoverExit(e)}
+                  ref={(el) => (line5 = el)}
+                  onClick={handleScroll}
+                >
+                  Contact
+                </li>
+              </a>
             </ul>
           </div>
         </div>

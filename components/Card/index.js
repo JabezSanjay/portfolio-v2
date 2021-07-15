@@ -1,24 +1,22 @@
 import React from "react";
-import Button from "../Button";
 import styled from "styled-components";
 import { ExternalLink } from "react-external-link";
 import COLORS from "../../assets/colors";
 
-const Card = (props) => {
-  let projectName = props.name;
-  let projectDescription = props.description;
-  let projectImage = props.image;
-  let projectUrl = props.url;
-
+const Card = ({ name, description, image, codeUrl, previewUrl }) => {
   return (
     <CardTag>
-      <div className="card" style={{ backgroundImage: `url(${props.image})` }}>
+      <div className="card" style={{ backgroundImage: `url(${image})` }}>
         <div className="inner">
-          <h2 className="title">{projectName}</h2>
-          <time className="subtitle">{projectDescription}</time>
+          <h2 className="title">{name}</h2>
+          <time className="subtitle">{description}</time>
           <div className="button">
-            <button className="code-button">Code</button>
-            <button className="preview-button">Preview</button>
+            <ExternalLink href={codeUrl}>
+              <button className="code-button">Code</button>
+            </ExternalLink>
+            <ExternalLink href={previewUrl}>
+              <button className="preview-button">Preview</button>
+            </ExternalLink>
           </div>
         </div>
       </div>

@@ -17,21 +17,24 @@ const Portfolio = () => {
 
   return (
     <PortfolioTag>
-      <div className="sections" id="portfolio">
+      <div className="sections" id="portfoliopage">
         <section className="portfoliopage">
           <div className="portfoliopage__container">
             <h2 className="text-center" ref={(el) => (reveal1 = el)}>
               Look at My Products.
             </h2>
             <div ref={(el) => (reveal2 = el)}>
-              <Button name="Contact Me" />
+              <a href="#contactpage">
+                <Button name="Contact Me" />
+              </a>
             </div>
             <div className="portfoliopage__split">
               <div ref={(el) => (reveal3 = el)}>
                 <Card
                   name="Ecommerce WebApp"
                   description="MongoDB | Express | React | NodeJs"
-                  url="https://tshirts-mern.herokuapp.com/"
+                  codeUrl="https://github.com/JabezSanjay/Ecommerce-V2"
+                  previewUrl="https://ecommerce.jabezsanjay.tech/"
                   image="/Images/ecommerce-project.jpg"
                 />
               </div>
@@ -39,7 +42,8 @@ const Portfolio = () => {
                 <Card
                   name="Movie Nomination"
                   description="React | Context API"
-                  url="https://tshirts-mern.herokuapp.com/"
+                  codeUrl="https://github.com/JabezSanjay/shopify-challenge"
+                  previewUrl="https://theshoppies.jabezsanjay.tech/"
                   image="/Images/shoppies-project.jpg"
                 />
               </div>

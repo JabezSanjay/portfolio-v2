@@ -14,7 +14,7 @@ const Contact = () => {
 
   return (
     <ContactTag>
-      <section className="contactpage">
+      <section className="contactpage" id="contactpage">
         <div className="sections">
           <div className="notation" ref={(el) => (reveal1 = el)}></div>
           <h3 ref={(el) => (reveal2 = el)}>
