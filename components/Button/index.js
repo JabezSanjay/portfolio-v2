@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import COLORS from "../../assets/colors";
 
-const Button = ({ name, dark }) => {
+const Button = ({ name, dark, width }) => {
   return (
     <ButtonTag>
       {dark ? (
@@ -10,7 +10,10 @@ const Button = ({ name, dark }) => {
           <span>{name}</span>
         </button>
       ) : (
-        <button className="skew-button" style={{ color: "#5A4FF8" }}>
+        <button
+          className="skew-button"
+          style={{ color: "#5A4FF8", width: width ? "100%" : "auto" }}
+        >
           <span>{name}</span>
         </button>
       )}
@@ -35,6 +38,7 @@ const ButtonTag = styled.div`
     color: ${COLORS.PURPLE_COLOR};
     font-size: 1rem;
     font-weight: 700;
+
     // Text
     span {
       transform: translate3d(0, 0, 0);

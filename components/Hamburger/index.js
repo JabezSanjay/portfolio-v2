@@ -20,6 +20,7 @@ const Hamburger = ({ state, opened }) => {
   let line3 = useRef(null);
   let line4 = useRef(null);
   let line5 = useRef(null);
+  let line6 = useRef(null);
 
   useEffect(() => {
     // If the menu is open and we click the menu button to close it.
@@ -38,7 +39,7 @@ const Hamburger = ({ state, opened }) => {
         height: "100%",
       });
       staggerReveal(reveal1, reveal2);
-      staggerText(line1, line2, line3, line4, line5);
+      staggerText(line1, line2, line3, line4, line5, line6);
     }
   }, [opened]);
 
@@ -56,7 +57,7 @@ const Hamburger = ({ state, opened }) => {
         <div ref={(el) => (reveal2 = el)} className="menu-layer">
           <div className="menu-layer__items">
             <ul>
-              <a href="#homepage">
+              <a href="/#homepage">
                 <li
                   onMouseEnter={(e) => handleHover(e)}
                   onMouseOut={(e) => handleHoverExit(e)}
@@ -66,7 +67,7 @@ const Hamburger = ({ state, opened }) => {
                   Home
                 </li>
               </a>
-              <a href="#aboutpage">
+              <a href="/#aboutpage">
                 <li
                   onMouseEnter={(e) => handleHover(e)}
                   onMouseOut={(e) => handleHoverExit(e)}
@@ -77,7 +78,7 @@ const Hamburger = ({ state, opened }) => {
                 </li>
               </a>
 
-              <a href="#servicespage">
+              <a href="/#servicespage">
                 <li
                   onMouseEnter={(e) => handleHover(e)}
                   onMouseOut={(e) => handleHoverExit(e)}
@@ -88,7 +89,7 @@ const Hamburger = ({ state, opened }) => {
                 </li>
               </a>
 
-              <a href="#portfoliopage">
+              <a href="/#portfoliopage">
                 <li
                   onMouseEnter={(e) => handleHover(e)}
                   onMouseOut={(e) => handleHoverExit(e)}
@@ -99,7 +100,7 @@ const Hamburger = ({ state, opened }) => {
                 </li>
               </a>
 
-              <a href="#contactpage">
+              <a href="/#contactpage">
                 <li
                   onMouseEnter={(e) => handleHover(e)}
                   onMouseOut={(e) => handleHoverExit(e)}
@@ -107,6 +108,16 @@ const Hamburger = ({ state, opened }) => {
                   onClick={handleScroll}
                 >
                   Contact
+                </li>
+              </a>
+              <a href="/learn">
+                <li
+                  onMouseEnter={(e) => handleHover(e)}
+                  onMouseOut={(e) => handleHoverExit(e)}
+                  ref={(el) => (line6 = el)}
+                  onClick={handleScroll}
+                >
+                  Learn
                 </li>
               </a>
             </ul>
@@ -154,7 +165,7 @@ const HamburgerTag = styled.div`
           auto;
         ul {
           text-align: center;
-          margin-top: 7em;
+          margin-top: 2em;
           li {
             color: ${COLORS.PRIMARY_COLOR};
             list-style-type: none;

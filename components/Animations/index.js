@@ -29,8 +29,8 @@ export const staggerRevealClose = (node1, node2) => {
 };
 
 // STAGGER THE LINKS TO APPEAR
-export const staggerText = (node1, node2, node3, node4, node5) => {
-  gsap.from([node1, node2, node3, node4, node5], {
+export const staggerText = (node1, node2, node3, node4, node5, node6) => {
+  gsap.from([node1, node2, node3, node4, node5, node6], {
     duration: 1.2,
     y: 80,
     delay: 0.3,
